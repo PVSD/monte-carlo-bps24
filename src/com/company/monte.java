@@ -1,33 +1,36 @@
 package com.company;
 
+import java.util.Random;
+
 /**
  * Created by bs482 on 11/27/18.
  */
 public class monte {
-    public double height, width, radius, xpos, ypos;
 
-    public monte (double h, double k, double r)
+    public double h, k, r, x, y;
+
+    public monte(double a, double b, double c)
     {
-        height = h;
-        width = k;
-        radius = r;
+        h = a;
+        k = b;
+        r = c;
     }
 
-    public double nextDropx ()
+    public double nextRainDrop_x()
     {
-        xpos = Math.random()*width;
-        return xpos;
+        x = Math.random()*(h)*2 + (h+r-(2*h));
+        return x;
     }
 
-    public double nextDropy ()
+    public double nextRainDrop_y()
     {
-        ypos = Math.random()*height;
-        return ypos;
+        y = Math.random()*(k)*2 + (k+r)-(2*h);
+        return y;
     }
 
-    public boolean isInCircle ()
+    public boolean insideCircle(double xp, double yp)
     {
-        if(Math.sqrt((ypos-height)*(ypos-height)+(xpos-width)*(xpos-width))<=radius)
+        if (((xp-h)*(xp-h) + (yp-k)*(yp-k)) <= (r*r))
         {
             return true;
         }

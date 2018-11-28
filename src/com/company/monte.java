@@ -4,7 +4,7 @@ package com.company;
  * Created by bs482 on 11/27/18.
  */
 public class monte {
-    public double height, width, radius;
+    public double height, width, radius, xpos, ypos;
 
     public monte (double h, double k, double r)
     {
@@ -15,17 +15,26 @@ public class monte {
 
     public double nextDropx ()
     {
-        return Math.random()*width;
+        xpos = Math.random()*width;
+        return xpos;
     }
 
     public double nextDropy ()
     {
-        return Math.random()*height;
+        ypos = Math.random()*height;
+        return ypos;
     }
 
     public boolean isInCircle ()
     {
-        if(x-hrig)
+        if(Math.sqrt((ypos-height)*(ypos-height)+(xpos-width)*(xpos-width))<=radius)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

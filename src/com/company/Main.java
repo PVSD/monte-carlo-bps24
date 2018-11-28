@@ -7,21 +7,23 @@ public class Main {
 
         int cirCount = 0;
         int sqrCount = 0;
-        int guess;
+        double estimate;
 
-        monte mcObj = new monte(5.0,3.0,2.0);
+        monte Obj = new monte(2.0,2.0,1.0);
 
-        for (int x = 0; x < 100; x++) {
+        for (int i = 0; i < 10000000; i++)
+        {
             sqrCount ++;
-            if (mcObj.insideCircle(mcObj.nextRainDrop_x(),mcObj.nextRainDrop_y())) {
+            if (Obj.insideCircle(Obj.nextRainDrop_x(),Obj.nextRainDrop_y()))
+            {
                 cirCount++;
             }
         }
 
-        guess = cirCount * (16)/(sqrCount*16);
+        estimate = (((double)(cirCount)) * (4))/(sqrCount);
 
 
-        System.out.println(guess + ", " + cirCount + ", " + sqrCount);
+        System.out.println("Pi is approximately: " + estimate);
 
     }
 }

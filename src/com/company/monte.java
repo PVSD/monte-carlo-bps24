@@ -18,19 +18,19 @@ public class monte {
 
     public double nextRainDrop_x()
     {
-        x = Math.random()*(h)*2 + (h+r-(2*h));
+        x = Math.random()*(h);
         return x;
     }
 
     public double nextRainDrop_y()
     {
-        y = Math.random()*(k)*2 + (k+r)-(2*h);
+        y = Math.random()*(k);
         return y;
     }
 
     public boolean insideCircle(double xp, double yp)
     {
-        if (((xp-h)*(xp-h) + (yp-k)*(yp-k)) <= (r*r))
+        if (((xp-(h/2))*(xp-(h/2)) + (yp-(k/2))*(yp-(k/2))) <= (r*r))
         {
             return true;
         }
